@@ -1,16 +1,15 @@
 <body>
-    <h1 style="font-family: 'Times New Roman', Times, serif; color: white; background-color: black;">
-        <center>MATH PROBLEM:</center>
-    </h1>
-    <h2>
-        <center>Suppose you are 13 years old, how much Vcut Spicy Barbecue flavor will you need to eat once a day until you reach 101 years old?</center>
-    </h2>
     <script>
-        let age = 13;
-        let maxAge = 101;
-        let numPerDay = 1;
-        let totalRequired = (numPerDay * 365) * (maxAge - age);
+        let age = window.prompt("Enter your age:", 13);
+        let maxAge = window.prompt("Enter the age you want to reach your target weight:", 20);
+        let numPerDay = window.prompt("How many calories do you plan to cut daily?");
+        let confirm = window.confirm(`Are you sure with ${age}, ${maxAge}, and ${numPerDay}?`);
 
-        document.write(`You will need ${totalRequired} to last the ripe old age of ${maxAge}.`);
+        if (confirm){
+            let totalRequired = (parseInt(numPerDay)) * (365) * (parseInt(maxAge) - parseInt(age));
+            document.write(`You will need ${totalRequired} calories to reach target weight by ${maxAge}.`);
+        } else {
+            document.write("Run the code again");
+        }
     </script>
 </body>
