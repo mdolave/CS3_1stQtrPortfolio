@@ -7,14 +7,34 @@
         <label> How much is the customer's order in PHP?
             <input id="mealprice" />
         </label> <br/>
+
         <label> How much does the customer plan to tip in PHP?
             <input id="tip" />
         </label> <br/>
-        <label> In the restaurant policy, how much is the service charge? 
+
+        <label> In the restaurant policy, what percentage is the service charge? 
             <input id="servicecharge" />
         </label> <br/>
-        <button onclick="checkTotalCost()"> Show Total Cost </button></p>
-        <p>Total Meal: <span id="totalcost"> </span> </p>
+
+        <button onclick="checkTotalMeal()"> 
+            <i>By clicking, you hereby confirm your input</i></p>
+        </button>
+        <p><b>Total Cost: </b><span id="totalmeal"></span></p>
+
+    <script>
+        function checkTotalMeal() {
+            let dMealPrice = parseFloat(mealprice.value);
+            let dTip = parseFloat(tip.value);
+            let dServiceCharge = parseFloat(servicecharge.value);
+            let totalMeal = dMealPrice + dTip + ((dServiceCharge / 100) * dMealPrice);
+            totalmeal.innerHTML = `<p><b> All in all, the customer must pay <u>PHP ${totalMeal.toFixed(2)}</u></b><br/></p>`;
+        }
+    </script>
+        <h3>
+            <br/><center>References</center>
+        </h3>
+        <footer>
+            <center>Asif, K. (2025, August 16). <i>What is toFixed() in Javascript?</i> HowDev. <a href="https://how.dev/answers/what-is-tofixed-in-javascript">https://how.dev/answers/what-is-tofixed-in-javascript</a></center>
+        </footer>
     </body>
-    <
 </html>
