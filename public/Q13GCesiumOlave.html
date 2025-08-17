@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+    <body>
+         <h2 style="font-family: 'Times New Roman', Times, serif; background-color: black; color: beige;">
+            A Documentation of Miguel Olave's Q1 3rd Graded Exercise from 9Cesium
+         </h2>
+
+         <p style="font-family: 'Times New Roman', Times, serif;">
+            Guess the number: ****<br/><i>The number is from 1 to 100.</i><br/>
+         </p>
+
+         <label>
+            Enter your guess:
+               <input id="guess" />
+         </label> <br/>
+
+         <button onclick="checkIt()"> 
+            <i>By clicking, you hereby confirm your guess.</i>
+        </button>
+
+        <p><b>Result: </b><span id="result"></span></p>
+
+    <script>
+       var dNumber = Math.floor(Math.random() * 100) + 1; 
+       // generates a number from 1  to 100 when the page loads
+      
+      function checkIt() {
+         dGuess = Number(guess.value);
+         if (dNumber > dGuess) {
+            result.innerHTML = `<p><b> ${dGuess} is lower than the number. Try again!</b></p>`
+         }  else if (dNumber < dGuess) {
+            result.innerHTML = `<p><b> ${dGuess} is higher than the number. Try again!</b></p>`
+         }  else {
+            result.innerHTML = `<p><b> ${dGuess} is correct! You got the number. Great job!</b></p>`
+         }
+      }
+   </script>           
+   </body>
